@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="20G224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DataComics" representedClassName=".DataComics" parentEntity="DataHero" syncable="YES" codeGenerationType="class">
+        <attribute name="comicName" optional="YES" attributeType="String"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataHero" inverseName="comics" inverseEntity="DataHero"/>
+        <relationship name="heroSerie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataHero" inverseName="series" inverseEntity="DataHero"/>
+    </entity>
+    <entity name="DataHero" representedClassName=".DataHero" syncable="YES" codeGenerationType="class">
+        <attribute name="heroDescription" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="imageExtension" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="comics" toMany="YES" deletionRule="Nullify" destinationEntity="DataComics" inverseName="hero" inverseEntity="DataComics"/>
+        <relationship name="series" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DataComics" inverseName="heroSerie" inverseEntity="DataComics"/>
+    </entity>
+    <entity name="OffsetData" representedClassName=".OffsetData" syncable="YES" codeGenerationType="class">
+        <attribute name="offsetNumber" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="DataComics" positionX="-36" positionY="45" width="128" height="74"/>
+        <element name="DataHero" positionX="-36" positionY="18" width="128" height="134"/>
+        <element name="OffsetData" positionX="-63" positionY="-18" width="128" height="44"/>
+    </elements>
+</model>

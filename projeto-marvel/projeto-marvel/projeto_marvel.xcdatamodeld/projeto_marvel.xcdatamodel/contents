@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="20G224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DBCharacter" representedClassName=".DBCharacter" syncable="YES" codeGenerationType="class">
+        <relationship name="data" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBDataClass"/>
+    </entity>
+    <entity name="DBComics" representedClassName=".DBComics" syncable="YES" codeGenerationType="class">
+        <attribute name="returned" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBComicsItem"/>
+    </entity>
+    <entity name="DBComicsItem" representedClassName=".DBComicsItem" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="DBDataClass" representedClassName=".DBDataClass" syncable="YES" codeGenerationType="class">
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="limit" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="offset" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="total" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="results" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBHero"/>
+    </entity>
+    <entity name="DBHero" representedClassName=".DBHero" syncable="YES" codeGenerationType="class">
+        <attribute name="heroDescription" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="comics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DBComics"/>
+        <relationship name="stories" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DBStories"/>
+        <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DBThumbnail"/>
+    </entity>
+    <entity name="DBStories" representedClassName=".DBStories" syncable="YES" codeGenerationType="class">
+        <attribute name="avaiable" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionURI" optional="YES" attributeType="String"/>
+        <attribute name="returned" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBStoriesItem"/>
+    </entity>
+    <entity name="DBStoriesItem" representedClassName=".DBStoriesItem" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="DBThumbnail" representedClassName=".DBThumbnail" syncable="YES" codeGenerationType="class">
+        <attribute name="path" optional="YES" attributeType="String"/>
+        <attribute name="thumbnailExtension" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Teste" representedClassName="Teste" syncable="YES" codeGenerationType="class">
+        <attribute name="teste" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="DBCharacter" positionX="0" positionY="90" width="128" height="44"/>
+        <element name="DBComics" positionX="0" positionY="90" width="128" height="59"/>
+        <element name="DBComicsItem" positionX="9" positionY="99" width="128" height="59"/>
+        <element name="DBDataClass" positionX="-54" positionY="-9" width="128" height="104"/>
+        <element name="DBHero" positionX="-36" positionY="45" width="128" height="119"/>
+        <element name="DBStories" positionX="-27" positionY="54" width="128" height="89"/>
+        <element name="DBStoriesItem" positionX="-9" positionY="81" width="128" height="59"/>
+        <element name="DBThumbnail" positionX="-18" positionY="63" width="128" height="59"/>
+        <element name="Teste" positionX="-18" positionY="72" width="128" height="44"/>
+    </elements>
+</model>
